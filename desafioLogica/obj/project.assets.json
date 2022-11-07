@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\obj\\desafioLogica\\desafioLogica.csproj",
+      "projectUniqueName": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\desafioLogica\\desafioLogica.csproj",
       "projectName": "desafioLogica",
-      "projectPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\obj\\desafioLogica\\desafioLogica.csproj",
+      "projectPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\desafioLogica\\desafioLogica.csproj",
       "packagesPath": "C:\\Users\\matheus.maschietto\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\obj\\desafioLogica\\obj\\",
+      "outputPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\desafioLogica\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\matheus.maschietto\\AppData\\Roaming\\NuGet\\NuGet.Config",
