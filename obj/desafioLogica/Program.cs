@@ -1,5 +1,6 @@
 ﻿    while(true){
         Console.Write("Digite a quantidade de notas que serão calculadas: ");
+        
         int qNotas = Convert.ToInt32(Console.ReadLine());
         double sumNotas = 0;
         char continuar = '.';
