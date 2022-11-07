@@ -1,0 +1,15 @@
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.csproj.AssemblyReference.cache
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.AssemblyInfoInputs.cache
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.AssemblyInfo.cs
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.csproj.CoreCompileInputs.cache
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\bin\Debug\net6.0\desafioLogica.exe
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\bin\Debug\net6.0\desafioLogica.deps.json
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\bin\Debug\net6.0\desafioLogica.runtimeconfig.json
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\bin\Debug\net6.0\desafioLogica.dll
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\bin\Debug\net6.0\desafioLogica.pdb
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.dll
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\refint\desafioLogica.dll
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.pdb
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\desafioLogica.genruntimeconfig.cache
+C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\obj\desafioLogica\obj\Debug\net6.0\ref\desafioLogica.dll
