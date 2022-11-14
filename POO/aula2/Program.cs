@@ -1,4 +1,0 @@
-﻿
-
-
-Pessoa pessoa = new Pessoa();

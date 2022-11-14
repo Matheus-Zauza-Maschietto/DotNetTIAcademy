@@ -1,5 +1,0 @@
-C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\POO\aula2\obj\Debug\net6.0\aula2.csproj.AssemblyReference.cache
-C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\POO\aula2\obj\Debug\net6.0\aula2.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\POO\aula2\obj\Debug\net6.0\aula2.AssemblyInfoInputs.cache
-C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\POO\aula2\obj\Debug\net6.0\aula2.AssemblyInfo.cs
-C:\Users\matheus.maschietto\Documents\GitHub\DotNetTIAcademy\POO\aula2\obj\Debug\net6.0\aula2.csproj.CoreCompileInputs.cache
