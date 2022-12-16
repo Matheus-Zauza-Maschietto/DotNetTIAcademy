@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using sistemaVendas.Dto;
 
 namespace sistemaVendas.Models
 {
@@ -14,5 +15,18 @@ namespace sistemaVendas.Models
         public string Cpf { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
+        public Vendedor()
+        {
+            
+        }
+        public Vendedor(CadastrarVendedorDTO dto)
+        {
+            Nome = dto.Nome;   
+            Email = dto.Email;
+            Telefone = dto.Telefone;
+            Cpf = dto.Cpf;
+            Login = dto.Login;
+            Senha = dto.Senha;
+        }
     }
 }
