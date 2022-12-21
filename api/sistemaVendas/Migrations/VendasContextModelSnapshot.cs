@@ -48,7 +48,7 @@ namespace sistemaVendas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Cliente");
+                    b.ToTable("Cliente", (string)null);
                 });
 
             modelBuilder.Entity("sistemaVendas.Models.ItemPedido", b =>
@@ -77,7 +77,7 @@ namespace sistemaVendas.Migrations
 
                     b.HasIndex("ServicoId");
 
-                    b.ToTable("ItensPedido");
+                    b.ToTable("ItensPedido", (string)null);
                 });
 
             modelBuilder.Entity("sistemaVendas.Models.Pedido", b =>
@@ -103,7 +103,7 @@ namespace sistemaVendas.Migrations
 
                     b.HasIndex("VendedorId");
 
-                    b.ToTable("Pedidos");
+                    b.ToTable("Pedidos", (string)null);
                 });
 
             modelBuilder.Entity("sistemaVendas.Models.Servico", b =>
@@ -124,7 +124,7 @@ namespace sistemaVendas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Servicos");
+                    b.ToTable("Servicos", (string)null);
                 });
 
             modelBuilder.Entity("sistemaVendas.Models.Vendedor", b =>
@@ -161,7 +161,7 @@ namespace sistemaVendas.Migrations
 
                     b.HasKey("Id");
 
-                    b.ToTable("Vendedores");
+                    b.ToTable("Vendedores", (string)null);
                 });
 
             modelBuilder.Entity("sistemaVendas.Models.ItemPedido", b =>

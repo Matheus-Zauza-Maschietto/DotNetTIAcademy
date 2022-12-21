@@ -11,6 +11,7 @@ namespace apiAula.Models
         public string Nome { get; set; }
         public string Email { get; set; }
         public bool Ativo { get; set; }
+        public DateTime DataCadastro { get; set; }
         public List<Endereco> Enderecos { get; set; }
     }
 }
