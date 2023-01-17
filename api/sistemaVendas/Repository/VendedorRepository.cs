@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using sistemaVendas.Context;
 using sistemaVendas.Models;
+using sistemaVendas.Dto;
 
 namespace sistemaVendas.Repository
 {
@@ -17,6 +18,32 @@ namespace sistemaVendas.Repository
         }
         public void Cadastrar(Vendedor vendedor){
             _context.Vendedores.Add(vendedor);
+            _context.SaveChanges();
+        }
+
+        public Vendedor ObterPorId(int id){
+            var vendedor = _context.Vendedores.Find(id);
+            return Vendedor;
+        }
+
+        public List<ObterVendedorDTO> ObterPorNome(string nome)
+        {
+            var vendedores = _context.Vendedores.Where(x => x.Nome.Contains(nome))
+                                                .Select(x => new ObterVendedorDTO(x))
+                                                .ToList();
+        }
+
+        public Vendedor AtualizarVendedor(Vendedor vendedor)
+        {
+            _context.Vendedores.Update(vendedor);
+            _context.SaveChanges();
+
+            return vendedor;
+        }
+
+        public void DeletarVendedor(Vendedor vendedor)
+        {
+            _context.Vendedores.Remove(vendedor);
             _context.SaveChanges();
         }
     }
