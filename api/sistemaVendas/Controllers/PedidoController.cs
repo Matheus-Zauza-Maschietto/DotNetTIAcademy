@@ -26,5 +26,16 @@ namespace sistemaVendas.Controllers
             _repository.Cadastrar(pedido);
             return Ok(pedido);
         }
+
+        [HttpGet("{id}")]
+        public IActionResult ObterPorId(int id)
+        {
+            var pedido = _repository.ObterPorId(id);
+            if(pedido is not null)
+            {
+                return Ok(pedido);
+            }
+            return NotFound(new {mensagem = "Pedido não encontrado"});
+        }
     }
 }

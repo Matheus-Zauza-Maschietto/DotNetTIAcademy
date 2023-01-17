@@ -20,7 +20,7 @@ namespace sistemaVendas.Repository
 
         public void Cadastrar(Cliente cliente)
         {
-            _context.Pedidos.Add(cliente);
+            _context.Cliente.Add(cliente);
             _context.SaveChanges();
         }
     }
