@@ -22,5 +22,4 @@ namespace sistemaVendas.Dto
             Login = vendedor.Login;
         }
     }
-    
 }

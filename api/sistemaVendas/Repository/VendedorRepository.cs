@@ -24,6 +24,7 @@ namespace sistemaVendas.Repository
         public Vendedor ObterPorId(int id){
             var vendedor = _context.Vendedores.Find(id);
             return vendedor;
+
         }
 
         public List<ObterVendedorDTO> ObterPorNome(string nome)
