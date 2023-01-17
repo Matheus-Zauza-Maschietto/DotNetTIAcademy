@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using sistemaVendas.Dto;
 
 namespace sistemaVendas.Models
 {
@@ -13,5 +14,18 @@ namespace sistemaVendas.Models
         public string Email { get; set; }
         public string Login { get; set; }
         public string Senha { get; set; }
+
+        public Cliente()
+        {
+            
+        }
+
+        public Cliente(CadastrarClienteDTO dto)
+        {
+            Nome = dto.Nome;
+            Email = dto.Email;
+            Login = dto.Login;
+            Senha = dto.Senha;
+        }
     }
 }

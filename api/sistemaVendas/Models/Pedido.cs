@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using sistemaVendas.Dto;
 
 namespace sistemaVendas.Models
 {
@@ -13,6 +14,17 @@ namespace sistemaVendas.Models
         public Vendedor Vendedor { get; set; }
         public int ClienteId { get; set; }
         public Cliente Cliente { get; set; }
-         
+        public Pedido()
+        {
+
+        }
+        public Pedido(CadastrarPedidoDTO dto)
+        {
+            Data = dto.Data;
+            VendedorId = dto.VendedorId;
+            ClienteId = dto.ClienteId;
+        }
     }
+
+    
 }

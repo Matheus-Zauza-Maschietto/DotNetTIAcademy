@@ -78,5 +78,18 @@ namespace sistemaVendas.Controllers
             return NotFound(new {mensagem = "Não foi encontrado nenhum vendedor com esse id para ser excluido"});
         }
 
+        [HttpPatch("{id}")]
+        public IActionResult AtualizarSenha(int id, AtualizarSenhaVendedorDTO dto)
+        {
+            var vendedor = _repository.ObterPorId(id);
+
+            if(vendedor is not null)
+            {
+                _repository.AtualizarSenha(vendedor, dto);
+                return Ok(vendedor);
+            }
+            return NotFound(new {mensagem = "Vendedor não encontrado"});
+        }
+
     }
 }
