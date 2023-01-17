@@ -21,6 +21,5 @@ namespace sistemaVendas.Dto
             Cpf = vendedor.Cpf;
             Login = vendedor.Login;
         }
-
     }
 }
