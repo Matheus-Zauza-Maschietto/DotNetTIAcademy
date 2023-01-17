@@ -23,7 +23,7 @@ namespace sistemaVendas.Repository
 
         public Vendedor ObterPorId(int id){
             var vendedor = _context.Vendedores.Find(id);
-            return Vendedor;
+            return vendedor;
         }
 
         public List<ObterVendedorDTO> ObterPorNome(string nome)
@@ -31,6 +31,7 @@ namespace sistemaVendas.Repository
             var vendedores = _context.Vendedores.Where(x => x.Nome.Contains(nome))
                                                 .Select(x => new ObterVendedorDTO(x))
                                                 .ToList();
+            return vendedores;
         }
 
         public Vendedor AtualizarVendedor(Vendedor vendedor)

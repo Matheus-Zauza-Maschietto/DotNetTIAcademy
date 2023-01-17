@@ -13,13 +13,14 @@ namespace sistemaVendas.Dto
         public string Telefone { get; set; }
         public string Cpf { get; set; }
         public string Login { get; set; }
+        public ObterVendedorDTO(Vendedor vendedor)
+        {
+            Nome = vendedor.Nome;
+            Email = vendedor.Email;
+            Telefone = vendedor.Telefone;
+            Cpf = vendedor.Cpf;
+            Login = vendedor.Login;
+        }
     }
-    public ObterVendedorDTO(Vendedor vendedor)
-    {
-        Nome = vendedor.Nome;
-        Email = vendedor.Email;
-        Telefone = vendedor.Telefone;
-        Cpf = vendedor.Cpf;
-        Login = vendedor.Login;
-    }
+    
 }
