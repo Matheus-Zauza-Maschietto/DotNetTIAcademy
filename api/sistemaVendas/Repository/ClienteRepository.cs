@@ -23,5 +23,26 @@ namespace sistemaVendas.Repository
             _context.Cliente.Add(cliente);
             _context.SaveChanges();
         }
+
+        public Cliente ObterPorId(int id)
+        {
+            var cliente = _context.Cliente.Find(id);
+            return cliente;
+        }
+
+        public Cliente AtualizarCliente(Cliente cliente)
+        {
+            _context.Cliente.Update(cliente);
+            _context.SaveChanges();
+
+            return cliente;
+        }
+
+        public void DeletarCliente(Cliente cliente)
+        {
+            _context.Cliente.Remove(cliente);
+            _context.SaveChanges();
+
+        }
     }
 }

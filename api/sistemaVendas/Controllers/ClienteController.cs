@@ -25,7 +25,45 @@ namespace sistemaVendas.Controllers
         {
             var cliente = new Cliente(dto);
             _repository.Cadastrar(cliente);
-            return Ok(new {mensagem = "Cadastro adicionado com sucesso"});
+            return Ok(cliente);
+        }
+
+        
+        [HttpGet("{id}")]
+        public IActionResult ObterPorId(int id)
+        {
+            var cliente = _repository.ObterPorId(id);
+            if(cliente is not null)
+            {
+                var clienteDTO = new ObterClienteDTO(cliente);
+                return Ok(clienteDTO);
+            }
+            return NotFound(new {mensagem = $"Não foi encontrado nenhum cliente com o id {id}"});
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Atualizar(int id, AtualizarClienteDTO clienteDTO)
+        {
+            var cliente = _repository.ObterPorId(id);
+            if(cliente is not null)
+            {
+                cliente.MapearAtualizarClienteDTO(clienteDTO);
+                _repository.AtualizarCliente(cliente);
+                return Ok(cliente);
+            }
+            return NotFound(new {mensagem= $"Não foi encontrado nenhum cliente com o id {id}"});
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Deletar(int id)
+        {
+            var cliente = _repository.ObterPorId(id);
+            if(cliente is not null)
+            {   
+                _repository.DeletarCliente(cliente);
+                return NoContent();
+            }
+            return NotFound(new {mensagem= $"Não foi encontrado nenhum cliente com o id {id}"});
         }
     }
 }

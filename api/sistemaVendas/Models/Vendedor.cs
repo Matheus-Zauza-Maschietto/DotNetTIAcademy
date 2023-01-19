@@ -19,6 +19,7 @@ namespace sistemaVendas.Models
         {
             
         }
+        
         public Vendedor(CadastrarVendedorDTO dto)
         {
             Nome = dto.Nome;   

@@ -35,11 +35,10 @@ namespace sistemaVendas.Controllers
             if(vendedor is not null)
             {
                 var vendedorDTO = new ObterVendedorDTO(vendedor);
-                return Ok(vendedor);
+                return Ok(vendedorDTO);
             }
-                
-            else
-                return NotFound(new { Mensagem = "Vendedor não encontrado"});
+            
+            return NotFound(new { Mensagem = "Vendedor não encontrado"});
         }
 
         [HttpGet("obterpornome/{nome}")]

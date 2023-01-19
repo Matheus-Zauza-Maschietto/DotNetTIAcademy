@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj": {}
+    "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj": {
+    "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
+        "projectUniqueName": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
         "projectName": "sistemaVendas",
-        "projectPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
-        "packagesPath": "C:\\Users\\mathe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\mathe\\OneDrive\\Documentos\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\obj\\",
+        "projectPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
+        "packagesPath": "C:\\Users\\matheus.maschietto\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\mathe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\matheus.maschietto\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -74,7 +74,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.403\\RuntimeIdentifierGraph.json"
         }
       }
     }
