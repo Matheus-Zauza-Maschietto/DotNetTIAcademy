@@ -27,6 +27,13 @@ namespace sistemaVendas.Controllers
             return Ok(pedido);
         }
 
+        [HttpGet]
+        public IActionResult ObterTodos()
+        {
+            var pedidos = _repository.ObterTodos();
+            return Ok(pedidos);
+        }
+
         [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
         {
@@ -35,7 +42,31 @@ namespace sistemaVendas.Controllers
             {
                 return Ok(pedido);
             }
-            return NotFound(new {mensagem = "Pedido não encontrado"});
+            return NotFound(new {mensagem = $"Não foi possivel encontrar um pedido com id {id}"});
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarPedido(int id, AtualizarPedidoDTO dto)
+        {
+            var pedido = _repository.ObterPorId(id);
+            pedido.MapearAtualizarPedidoDTO(dto);
+            if(pedido is not null)
+            {
+                return Ok(dto);
+            }
+            return NotFound(new {mensagem = $"Não foi possivel encontrar um pedido com id {id}"});
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletarPedido(int id)
+        {
+            var pedido = _repository.ObterPorId(id);
+            if(pedido is not null){
+                _repository.DeletarPedido(pedido);
+                return NoContent();
+            }
+            return NotFound(new {mensagem = $"No foi possivel encontrar um pedido com id {id}"});
+            
         }
     }
 }

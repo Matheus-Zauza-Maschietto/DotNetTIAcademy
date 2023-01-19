@@ -28,6 +28,7 @@ namespace sistemaVendas.Controllers
             return Ok(servico);
         }
 
+        [HttpGet("{id}")]
         public IActionResult ObterPorId(int id)
         {
             var servico = _repository.ObterPorId(id);
@@ -39,5 +40,36 @@ namespace sistemaVendas.Controllers
             return NotFound(new {mensagem = $"Não foi encontrada um serviço com id {id}"}); 
         }
 
+        [HttpGet]
+        public IActionResult ObterTodos()
+        {
+            var servicos = _repository.ObterTodos();
+            return Ok(servicos);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult AtualizarServico(int id, AtualizarServicoDTO dto)
+        {
+            var servico = _repository.ObterPorId(id);
+            if(servico is not null)
+            {
+                servico.MapearAtualizarServicoDTO(dto);
+                _repository.AtualizarServico(servico);
+                return Ok(dto);
+            }
+           return NotFound(new {menssagem = $"Não foi possivel encontrar o servico de id {id}"});
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult DeletarServico(int id)
+        {
+            var servico = _repository.ObterPorId(id);
+            if(servico is not null)
+            {
+                _repository.DeletarServico(servico);
+                return Ok(servico);
+            }
+           return NotFound(new {menssagem = $"Não foi possivel encontrar o servico de id {id}"});
+        }
     }
 }

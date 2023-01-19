@@ -30,12 +30,16 @@ namespace sistemaVendas.Repository
             return cliente;
         }
 
-        public Cliente AtualizarCliente(Cliente cliente)
+        public List<ObterClienteComIdDTO> ObterTodos()
+        {
+            var clientes = _context.Cliente.Select((x) => new ObterClienteComIdDTO(x)).ToList();
+            return clientes;
+        }
+
+        public void AtualizarCliente(Cliente cliente)
         {
             _context.Cliente.Update(cliente);
             _context.SaveChanges();
-
-            return cliente;
         }
 
         public void DeletarCliente(Cliente cliente)

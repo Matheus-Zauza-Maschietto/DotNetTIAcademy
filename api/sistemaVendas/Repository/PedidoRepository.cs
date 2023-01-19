@@ -29,5 +29,26 @@ namespace sistemaVendas.Repository
                                          .FirstOrDefault(x => x.Id == id);
             return pedido;
         }
+
+        public List<ObterPedidoComIdDTO> ObterTodos()
+        {
+            var pedidos = _context.Pedidos.Include(x => x.Vendedor)
+                                          .Include(x => x.Cliente)
+                                          .Select(x => new ObterPedidoComIdDTO(x))
+                                          .ToList(); 
+            return pedidos;
+        }
+
+        public void AtualizarPedido(Pedido pedido)
+        {
+            _context.Pedidos.Update(pedido);
+            _context.SaveChanges();
+        }
+
+        public void DeletarPedido(Pedido pedido)
+        {
+            _context.Pedidos.Remove(pedido);
+            _context.SaveChanges();
+        }
     }
 }

@@ -51,6 +51,13 @@ namespace sistemaVendas.Controllers
             return Ok(vendedores);
         }
 
+        [HttpGet]
+        public IActionResult ObterTodos()
+        {
+            var vendedores = _repository.ObterTodos();
+            return Ok(vendedores);
+        }
+
         [HttpPut("{id}")]
         public IActionResult Atualizar(int id, AtualizarVendedorDTO dto)
         {

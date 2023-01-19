@@ -28,5 +28,22 @@ namespace sistemaVendas.Repository
             var servico = _context.Servicos.Find(id);
             return servico;
         }
+
+        public List<ObterServicoComIdDTO> ObterTodos()
+        {
+            var servicos = _context.Servicos.Select(x => new ObterServicoComIdDTO(x)).ToList();
+            return servicos;
+        }
+        public void AtualizarServico(Servico servico)
+        {
+            _context.Servicos.Update(servico);
+            _context.SaveChanges();
+        }
+
+        public void DeletarServico(Servico servico)
+        {
+            _context.Servicos.Remove(servico);
+            _context.SaveChanges();
+        }
     }
 }

@@ -34,12 +34,16 @@ namespace sistemaVendas.Repository
             return vendedores;
         }
 
-        public Vendedor AtualizarVendedor(Vendedor vendedor)
+        public List<ObterVendedorComIdDTO> ObterTodos()
+        {
+            var vendedor = _context.Vendedores.Select(x => new ObterVendedorComIdDTO(x)).ToList();
+            return vendedor;
+        }
+
+        public void AtualizarVendedor(Vendedor vendedor)
         {
             _context.Vendedores.Update(vendedor);
             _context.SaveChanges();
-
-            return vendedor;
         }
 
         public void DeletarVendedor(Vendedor vendedor)
@@ -53,5 +57,6 @@ namespace sistemaVendas.Repository
             vendedor.Senha = dto.Senha;
             AtualizarVendedor(vendedor);
         }
+        
     }
 }
