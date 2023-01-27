@@ -2,7 +2,7 @@ import http from "../http-common.js"
 
 class VendedorDataService{
     listar(){
-        return http.get('/vendedor')
+        return http.get('/listar')
     }
 }
 
