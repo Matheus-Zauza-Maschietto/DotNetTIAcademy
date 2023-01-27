@@ -14,8 +14,8 @@
             <td>{{ vendedor.nome }}</td>
             <td>{{ vendedor.login }}</td>
             <td>
-              <button class="btn btn-sucess"></button>
-              <button class="btn btn-danger"></button>
+              <button class="btn btn-success" @click="editarVendedor(vendedor.id)">Editar</button>
+              <button class="btn btn-danger">Excluir</button>
             </td>
           </tr>
         </tbody>
@@ -36,6 +36,9 @@ export default {
     obterVendedores() {
       VendedorDataService.listar()
         .then(response => this.vendedores = response.data)
+    },
+    editarVendedor(id){
+      this.$router.push("/vendedor/atualizar/"+id)
     }
   },
   mounted(){
