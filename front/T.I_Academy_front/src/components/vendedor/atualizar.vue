@@ -3,12 +3,16 @@
     <h3>Atualiazar Vendedor</h3>
     <div class="form" style="padding: 1%;">
         <div>
+            <label for="" class="form-label">Id</label>
+            <input type="text" class="form-control" required placeholder="Id" v-model="cadastro.Id" disabled>
+        </div>
+        <div>
             <label for="" class="form-label">Nome</label>
             <input type="text" class="form-control" required placeholder="Nome" v-model="cadastro.Nome">
         </div>
         <div>
             <label for="" class="form-label">Login</label>
-            <input type="text" class="form-control" required placeholder="Login" v-model="cadastro.Login">
+            <input type="text" class="form-control" required placeholder="Login" v-model="cadastro.Login" disabled>
         </div>
         <div>
             <label for="" class="form-label">Email</label>
@@ -26,7 +30,7 @@
             <label for="" class="form-label">Senha</label>
             <input type="password" class="form-control" required v-model="cadastro.Senha">
         </div>
-        <button class="btn btn-success" style="margin-top: 4%;" @click="atualizarVendedor()">Cadastrar</button>
+        <button class="btn btn-success" style="margin-top: 4%;" @click="atualizarVendedor">Cadastrar</button>
     </div>
   </div>
 </template>
@@ -50,22 +54,21 @@ export default {
     },
     methods: {
         obterVendedor(id){
-            console.log(id)
             VendedorDataService.obterPorId(id)
-                .then(() => {
+                .then((response) => {
                     this.vendedor = response.data;
                 })
         },
         atualizarVendedor(){
-            console.log("teste")
             VendedorDataService.atualizar(this.vendedor.id, this.vendedor)
                 .then(() => {
                     this.$router.push('listar')
                 })
         },
-        mounted(){
-            this.obterVendedor(this.$route.params.id)
-        }
+        
+    },
+    mounted(){
+        this.obterVendedor(this.$route.params.id)
     }
 }
 </script>

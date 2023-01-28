@@ -35,7 +35,7 @@
 import VendedorDataService from '../../services/VendedorDataService';
 
 export default {
-    name: "FuncionarioCadastro",
+    name: "cadastrarFuncionarios",
     data(){
         return{
             cadastro: {

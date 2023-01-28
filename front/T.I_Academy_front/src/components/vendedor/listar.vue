@@ -15,7 +15,7 @@
             <td>{{ vendedor.login }}</td>
             <td>
               <button class="btn btn-success" @click="editarVendedor(vendedor.id)">Editar</button>
-              <button class="btn btn-danger">Excluir</button>
+              <button class="btn btn-danger" @click="excluirVendedor(vendedor)">Excluir</button>
             </td>
           </tr>
         </tbody>
@@ -27,6 +27,7 @@
 import VendedorDataService from '../../services/VendedorDataService';
 
 export default {
+  name: "listarVendedores",
   data() {
     return{
       vendedores: []
@@ -37,8 +38,16 @@ export default {
       VendedorDataService.listar()
         .then(response => this.vendedores = response.data)
     },
+
     editarVendedor(id){
       this.$router.push("/vendedor/atualizar/"+id)
+    },
+
+    async excluirVendedor(vendedor){
+      if(confirm(`Tem certeza que deseja excluir o vendedor ${vendedor.nome}`)){
+        await VendedorDataService.deletar(vendedor.id)
+        this.obterVendedores();
+      }
     }
   },
   mounted(){
