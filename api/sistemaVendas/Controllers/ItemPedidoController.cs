@@ -41,7 +41,6 @@ namespace sistemaVendas.Controllers
             var ItemPedido = _repository.ObterPorId(id);
             if(ItemPedido is not null)
             {
-                var ItemPedidoDTO = new ObterItemPedidoDTO(ItemPedido);
                 return Ok(ItemPedido);
             }
             return NotFound(new {mensagem = $"Não foi encontrado nenhum item de pedido com id {id}"});

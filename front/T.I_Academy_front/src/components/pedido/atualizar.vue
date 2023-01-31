@@ -29,7 +29,7 @@
             </select>
         </div>
 
-        <button class="btn btn-success" style="margin-top: 4%;" @click="atualizarPedido">Cadastrar</button>
+        <button class="btn btn-success" style="margin-top: 4%;" @click="atualizarPedido">Atualizar</button>
     </div>
   </div>
 </template>

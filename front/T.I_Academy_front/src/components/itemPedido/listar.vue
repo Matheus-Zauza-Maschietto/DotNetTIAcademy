@@ -31,7 +31,7 @@
 </template>
 
 <script>
-import ItemPedidoDataService from '../../services/ItemPedidioDataService';
+import ItemPedidoDataService from '../../services/ItemPedidoDataService';
 import PedidoDataService from '../../services/PedidoDataService.js';
 
 export default {
@@ -53,8 +53,8 @@ export default {
         .then(response => this.Pedido = response.data)
     },
 
-    editarPedido(id){
-      this.$router.push("/pedido/:pedidoId/itens-pedido/atualizar/:itemPedidoId)
+    editarPedido(idPedido, idItem){
+      this.$router.push("/pedido/"+idPedido+"/itens-pedido/atualizar/"+idItem)
     },
 
     async excluirPedido(pedido){
@@ -64,8 +64,8 @@ export default {
       }
     },
 
-    adicionarNovoItem(idPedido, IdItem){
-      this.$router.push("/pedido/"+idPedido+"/itens-pedido/atualizar/"+IdItem)
+    adicionarNovoItem(id){
+      this.$router.push("/pedido/"+id+"/itens-pedido/cadastrar")
     }
   },
   computed: {

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "p7wb8jWiINgLM+n0kVZCe1QCon7wNxunWjL4FukfVb5GCnBmPmHqN6d173lAxfKotybyWx6eyIMqQWng2ICtLA==",
+  "dgSpecHash": "8pIxXH/n73J33FD7LljvIh7wWKDZE42+Vt579qjdwo4SPUWtjOl6by7cxgVsV/oeZvSPV0qIuy6I1KAa9EobZA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
+  "projectFilePath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemaVendas\\sistemaVendas.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\matheus.maschietto\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\matheus.maschietto\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

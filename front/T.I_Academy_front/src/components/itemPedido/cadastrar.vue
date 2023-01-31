@@ -27,7 +27,7 @@
 
 <script>
 import ServicoDataService from '../../services/ServicoDataService';
-import ItemPedidioDataService from '../../services/ItemPedidioDataService';
+import ItemPedidioDataService from '../../services/ItemPedidoDataService';
 
 export default {
     name: "cadastrarItemPedidos",
@@ -44,9 +44,6 @@ export default {
     },
     methods: {
         cadastrarVendedor(){
-
-            console.log(this.cadastro.quantidade)
-            console.log(this.cadastro.valor)
             if(Number(this.cadastro.quantidade) <= 0 || Number(this.cadastro.valor) <= 0){
                 alert("Quantidade e valor devem ter um valor minimo de 1")
             }

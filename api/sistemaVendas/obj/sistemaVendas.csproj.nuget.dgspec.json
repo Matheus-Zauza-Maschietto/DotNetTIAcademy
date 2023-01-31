@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj": {}
+    "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemaVendas\\sistemaVendas.csproj": {}
   },
   "projects": {
-    "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj": {
+    "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemaVendas\\sistemaVendas.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
+        "projectUniqueName": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemaVendas\\sistemaVendas.csproj",
         "projectName": "sistemaVendas",
-        "projectPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\sistemaVendas.csproj",
+        "projectPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemaVendas\\sistemaVendas.csproj",
         "packagesPath": "C:\\Users\\matheus.maschietto\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemavendas\\obj\\",
+        "outputPath": "C:\\Users\\matheus.maschietto\\Documents\\GitHub\\DotNetTIAcademy\\api\\sistemaVendas\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\matheus.maschietto\\AppData\\Roaming\\NuGet\\NuGet.Config",
