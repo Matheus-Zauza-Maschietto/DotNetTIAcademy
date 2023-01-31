@@ -28,7 +28,7 @@ namespace sistemaVendas.Controllers
             return Ok(ItemPedido);
         }
 
-        [HttpGet]
+        [HttpGet("listar")]
         public IActionResult ObterTodos()
         {
             var ItensPedido = _repository.ObterTodos();

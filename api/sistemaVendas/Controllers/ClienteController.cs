@@ -41,7 +41,7 @@ namespace sistemaVendas.Controllers
             return NotFound(new {mensagem = $"Não foi encontrado nenhum cliente com o id {id}"});
         }
 
-        [HttpGet]
+        [HttpGet("listar")]
         public IActionResult ObterTodos()
         {
             var clientes = _repository.ObterTodos();

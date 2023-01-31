@@ -1,18 +1,48 @@
-<script setup>
+<script>
+  export default{
+    name: "app",
+    data(){
+      return{
+        controllData:{
+          vendedor: false
+        }
+      }
+    }
+  }
 </script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"/>
 <template>
   <div id="app">
-    <div class="navbar">
-      <div class="dropdown">
-        <button class="dropbtn">Dropdown
-          <i class="fa fa-caret-down"></i>
-        </button>
-        <div class="dropdown-content">
-          <router-link to="/vendedor/listar">Listar</router-link>
-        </div>
+
+    <div class="dropdown">
+      <button class="dropbtn">Vendedores</button>
+      <div class="dropdown-content">
+        <router-link to="/vendedor/listar">Listar vendedores</router-link>
+        <router-link to="/vendedor/cadastrar">Cadastrar vendedor</router-link>
       </div>
     </div>
+    <div class="dropdown">
+      <button class="dropbtn">Clientes</button>
+      <div class="dropdown-content">
+        <router-link to="/cliente/listar">Listar clientes</router-link>
+        <router-link to="/cliente/cadastrar">Cadastrar clientes</router-link>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Serviços</button>
+      <div class="dropdown-content">
+        <router-link to="/servico/listar">Listar serviços</router-link>
+        <router-link to="/servico/cadastrar">Cadastrar serviço</router-link>
+      </div>
+    </div>
+    <div class="dropdown">
+      <button class="dropbtn">Pedidos</button>
+      <div class="dropdown-content">
+        <router-link to="/pedido/listar">Listar itens pedido</router-link>
+        <router-link to="/pedido/cadastrar">Cadastrar item pedido</router-link>
+      </div>
+    </div>
+
     <router-view/>
   </div>
 
@@ -23,40 +53,23 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.navbar {
-  overflow: hidden;
-  background-color: #333;
-}
-
-.navbar a {
-  float: left;
+/* Style The Dropdown Button */
+.dropbtn {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px;
   font-size: 16px;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
-
-.dropdown {
-  float: left;
-  overflow: hidden;
-}
-
-.dropdown .dropbtn {
-  font-size: 16px;  
   border: none;
-  outline: none;
-  color: white;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
-  margin: 0;
+  cursor: pointer;
 }
 
-.navbar a:hover, .dropdown:hover .dropbtn {
-  background-color: red;
+/* The container <div> - needed to position the dropdown content */
+.dropdown {
+  position: relative;
+  display: inline-block;
 }
 
+/* Dropdown Content (Hidden by Default) */
 .dropdown-content {
   display: none;
   position: absolute;
@@ -66,20 +79,24 @@ body {
   z-index: 1;
 }
 
+/* Links inside the dropdown */
 .dropdown-content a {
-  float: none;
   color: black;
   padding: 12px 16px;
   text-decoration: none;
   display: block;
-  text-align: left;
 }
 
-.dropdown-content a:hover {
-  background-color: #ddd;
-}
+/* Change color of dropdown links on hover */
+.dropdown-content a:hover {background-color: #f1f1f1}
 
+/* Show the dropdown menu on hover */
 .dropdown:hover .dropdown-content {
   display: block;
+}
+
+/* Change the background color of the dropdown button when the dropdown content is shown */
+.dropdown:hover .dropbtn {
+  background-color: #3e8e41;
 }
 </style>

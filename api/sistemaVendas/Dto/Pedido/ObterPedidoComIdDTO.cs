@@ -13,6 +13,7 @@ namespace sistemaVendas.Dto
         public DateTime Data { get; set; }
         public ObterVendedorComIdDTO Vendedor { get; set; }
         public ObterClienteComIdDTO Cliente { get; set; }
+        public decimal ValorTotal { get; set; }
 
         public ObterPedidoComIdDTO(Pedido pedido)
         {
@@ -20,6 +21,7 @@ namespace sistemaVendas.Dto
             Data = pedido.Data;
             Vendedor = new ObterVendedorComIdDTO(pedido.Vendedor);
             Cliente = new ObterClienteComIdDTO(pedido.Cliente);
+            ValorTotal = pedido.ValorTotal;
         }
     }
 }

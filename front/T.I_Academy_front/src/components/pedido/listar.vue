@@ -1,0 +1,68 @@
+<template>
+  <div class="col-7">
+    <table class="table table-striped">
+        <thead>
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Data</th>
+            <th scope="col">Vendedor</th>
+            <th scope="col">Cliente</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="(pedido, index) in pedidos" :key="index">
+            <th scope="row">{{ pedido.id }}</th>
+            <td scope="row">{{ pedido.data }}</td>
+            <td>{{ pedido.vendedor.nome }}</td>
+            <td>{{ pedido.cliente.nome }}</td>
+            <td>
+              <button class="btn btn-success" @click="editarPedido(pedido.id)">Editar</button>
+              <button class="btn btn-danger" @click="excluirPedido(pedido)">Excluir</button>
+              <button class="btn btn-primary" @click="buscarItensPedido(pedido.id)">Itens Pedido</button>
+            </td>
+          </tr>
+        </tbody>
+    </table>
+  </div>
+</template>
+
+<script>
+import PedidoDataService from '../../services/PedidoDataService.js';
+
+export default {
+  name: "listarPedidos",
+  data() {
+    return{
+      pedidos: []
+    }
+  },
+  methods: {
+    obterPedidos() {
+      PedidoDataService.listar()
+        .then(response => this.pedidos = response.data)
+    },
+
+    editarPedido(id){
+      this.$router.push("/pedido/atualizar/"+id)
+    },
+
+    async excluirPedido(pedido){
+      if(confirm(`Tem certeza que deseja excluir o pedido ${pedido.id}`)){
+        await PedidoDataService.deletar(pedido.id)
+        this.obterPedidos();
+      }
+    }
+  },
+  mounted(){
+    this.obterPedidos()
+  }
+}
+
+</script>
+
+<style>
+
+</style>
+
+
+

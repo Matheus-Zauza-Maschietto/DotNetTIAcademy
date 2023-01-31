@@ -51,7 +51,7 @@ namespace sistemaVendas.Controllers
             return Ok(vendedores);
         }
 
-        [HttpGet("/listar")]
+        [HttpGet("listar")]
         public IActionResult ObterTodos()
         {
             var vendedores = _repository.ObterTodos();

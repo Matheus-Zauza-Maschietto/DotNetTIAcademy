@@ -18,5 +18,6 @@ namespace sistemaVendas.Context
         public DbSet<Pedido> Pedidos { get; set; }
         public DbSet<Servico> Servicos { get; set; }
         public DbSet<Vendedor> Vendedores { get; set; }
+
     }
 }

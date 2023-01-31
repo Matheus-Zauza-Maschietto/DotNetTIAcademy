@@ -40,7 +40,7 @@ namespace sistemaVendas.Controllers
             return NotFound(new {mensagem = $"Não foi encontrada um serviço com id {id}"}); 
         }
 
-        [HttpGet]
+        [HttpGet("listar")]
         public IActionResult ObterTodos()
         {
             var servicos = _repository.ObterTodos();
