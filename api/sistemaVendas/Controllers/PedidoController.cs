@@ -50,6 +50,7 @@ namespace sistemaVendas.Controllers
         {
             var pedido = _repository.ObterPorId(id);
             pedido.MapearAtualizarPedidoDTO(dto);
+            _repository.AtualizarPedido(pedido);
             if(pedido is not null)
             {
                 return Ok(dto);

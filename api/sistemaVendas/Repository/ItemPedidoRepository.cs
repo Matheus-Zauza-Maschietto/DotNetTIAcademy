@@ -38,6 +38,15 @@ namespace sistemaVendas.Repository
             return itemPedido;
         }
 
+        public List<ObterItemPedidoComIdDTO> ObterPedido(int id)
+        {
+            var itensPedido = _context.ItensPedido.Include(x => x.Servico)
+                                                  .Where(x => x.PedidoId == id)
+                                                  .Select(x => new ObterItemPedidoComIdDTO(x))
+                                                  .ToList();
+            return itensPedido; 
+        }
+
         public void Atualizar(ItemPedido itemPedido)
         {
             _context.ItensPedido.Update(itemPedido);

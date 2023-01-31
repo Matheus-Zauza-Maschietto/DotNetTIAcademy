@@ -14,36 +14,40 @@
 <template>
   <div id="app">
 
-    <div class="dropdown">
-      <button class="dropbtn">Vendedores</button>
-      <div class="dropdown-content">
-        <router-link to="/vendedor/listar">Listar vendedores</router-link>
-        <router-link to="/vendedor/cadastrar">Cadastrar vendedor</router-link>
+    <div class="header">
+      <div class="dropdown">
+        <button class="dropbtn">Vendedores</button>
+        <div class="dropdown-content">
+          <router-link to="/vendedor/listar">Listar vendedores</router-link>
+          <router-link to="/vendedor/cadastrar">Cadastrar vendedor</router-link>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Clientes</button>
+        <div class="dropdown-content">
+          <router-link to="/cliente/listar">Listar clientes</router-link>
+          <router-link to="/cliente/cadastrar">Cadastrar clientes</router-link>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Serviços</button>
+        <div class="dropdown-content">
+          <router-link to="/servico/listar">Listar serviços</router-link>
+          <router-link to="/servico/cadastrar">Cadastrar serviço</router-link>
+        </div>
+      </div>
+      <div class="dropdown">
+        <button class="dropbtn">Pedidos</button>
+        <div class="dropdown-content">
+          <router-link to="/pedido/listar">Listar itens pedido</router-link>
+          <router-link to="/pedido/cadastrar">Cadastrar item pedido</router-link>
+        </div>
       </div>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Clientes</button>
-      <div class="dropdown-content">
-        <router-link to="/cliente/listar">Listar clientes</router-link>
-        <router-link to="/cliente/cadastrar">Cadastrar clientes</router-link>
-      </div>
+    <div class="body">
+      <router-view/>
     </div>
-    <div class="dropdown">
-      <button class="dropbtn">Serviços</button>
-      <div class="dropdown-content">
-        <router-link to="/servico/listar">Listar serviços</router-link>
-        <router-link to="/servico/cadastrar">Cadastrar serviço</router-link>
-      </div>
-    </div>
-    <div class="dropdown">
-      <button class="dropbtn">Pedidos</button>
-      <div class="dropdown-content">
-        <router-link to="/pedido/listar">Listar itens pedido</router-link>
-        <router-link to="/pedido/cadastrar">Cadastrar item pedido</router-link>
-      </div>
-    </div>
-
-    <router-view/>
+    
   </div>
 
 </template>
@@ -51,6 +55,17 @@
 <style scoped>
 body {
   font-family: Arial, Helvetica, sans-serif;
+}
+.body{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+}
+.header{
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  background-color: #4CAF50;
 }
 
 /* Style The Dropdown Button */

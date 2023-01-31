@@ -47,6 +47,17 @@ namespace sistemaVendas.Controllers
             return NotFound(new {mensagem = $"Não foi encontrado nenhum item de pedido com id {id}"});
         }
 
+        [HttpGet("pedido/{id}")]
+        public IActionResult ObterPorPedido(int id)
+        {
+            var ItensPedido = _repository.ObterPedido(id);
+            if(ItensPedido is not null)
+            {
+                return Ok(ItensPedido);
+            }
+            return NotFound(new {mensagem = $"Não foi encontrado nenhum item de pedido do pedido de id {id}"});
+        }
+
         [HttpPut("{id}")]
         public IActionResult AtualizarItemPedido(int id, AtualizarItemPedidoDTO dto)
         {

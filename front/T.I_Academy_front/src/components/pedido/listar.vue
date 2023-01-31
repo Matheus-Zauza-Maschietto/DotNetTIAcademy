@@ -51,6 +51,10 @@ export default {
         await PedidoDataService.deletar(pedido.id)
         this.obterPedidos();
       }
+    },
+
+    buscarItensPedido(id){
+      this.$router.push('/pedido/'+id+'/itens-pedido/listar')
     }
   },
   mounted(){

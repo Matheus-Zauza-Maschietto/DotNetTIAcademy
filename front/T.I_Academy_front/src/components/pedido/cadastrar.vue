@@ -9,14 +9,14 @@
         <div>
             <label for="" class="form-label">Vendedor</label>
             <br>
-            <select name="vendedor" id="vendedor" v-model="cadastro.vendedorId">
+            <select name="vendedor" id="vendedor" v-model="cadastro.vendedorId" class="form-select">
                 <option v-for="(vendedor, index) in Vendedores" :key="index" :value="vendedor.id">{{ vendedor.nome }}</option>
             </select>
         </div>
         <div>
             <label for="" class="form-label">Cliente</label>
             <br>
-            <select name="cliente" id="cliente" v-model="cadastro.clienteId">
+            <select name="cliente" id="cliente" v-model="cadastro.clienteId" class="form-select">
                 <option v-for="(cliente, index) in Clientes" :key="index" :value="cliente.id">{{ cliente.nome }}</option>
             </select>
         </div>
