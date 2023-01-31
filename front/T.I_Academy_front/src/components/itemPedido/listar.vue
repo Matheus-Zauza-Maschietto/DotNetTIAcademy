@@ -20,7 +20,7 @@
             <td>{{ item.quantidade }}</td>
             <td>R$ {{ item.valor* item.quantidade }}</td>
             <td>
-              <button class="btn btn-success" @click="editarPedido(item.id)">Editar</button>
+              <button class="btn btn-success" @click="editarPedido(Pedido.id, item.id)">Editar</button>
               <button class="btn btn-danger" @click="excluirPedido(item)">Excluir</button>
             </td>
           </tr>
@@ -54,7 +54,7 @@ export default {
     },
 
     editarPedido(id){
-      this.$router.push("/pedido/atualizar/"+id)
+      this.$router.push("/pedido/:pedidoId/itens-pedido/atualizar/:itemPedidoId)
     },
 
     async excluirPedido(pedido){
@@ -64,13 +64,13 @@ export default {
       }
     },
 
-    adicionarNovoItem(id){
-      this.$router.push("/pedido/"+id+"/itens-pedido/cadastrar")
+    adicionarNovoItem(idPedido, IdItem){
+      this.$router.push("/pedido/"+idPedido+"/itens-pedido/atualizar/"+IdItem)
     }
   },
   computed: {
   },
-  created(){
+  beforeMount(){
     this.obterItensPedido()
     this.obterPedidos()
   }

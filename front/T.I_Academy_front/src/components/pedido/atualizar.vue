@@ -92,7 +92,7 @@ export default {
         },
 
     },
-    created(){
+    beforeMount(){
         this.obterPedido(this.$route.params.id)
         this.obterVendedores()
         this.obterClientes()
