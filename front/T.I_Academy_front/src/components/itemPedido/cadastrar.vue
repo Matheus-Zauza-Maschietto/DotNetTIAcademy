@@ -50,7 +50,7 @@ export default {
             else{
                 ItemPedidioDataService.cadastrar(this.cadastro)
                 .then(() => {
-                    this.$router.push('/pedido/listar')
+                    this.$router.push('/pedido/'+this.cadastro.pedidoId+'/itens-pedido/listar')
                 })
             }
         },

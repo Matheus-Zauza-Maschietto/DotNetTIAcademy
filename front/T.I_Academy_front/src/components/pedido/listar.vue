@@ -12,7 +12,7 @@
         <tbody>
           <tr v-for="(pedido, index) in pedidos" :key="index">
             <th scope="row">{{ pedido.id }}</th>
-            <td scope="row">{{ pedido.data }}</td>
+            <td scope="row">{{ toLocaleDate(pedido.data) }}</td>
             <td>{{ pedido.vendedor.nome }}</td>
             <td>{{ pedido.cliente.nome }}</td>
             <td>
@@ -40,6 +40,7 @@ export default {
     obterPedidos() {
       PedidoDataService.listar()
         .then(response => this.pedidos = response.data)
+
     },
 
     editarPedido(id){
@@ -55,7 +56,15 @@ export default {
 
     buscarItensPedido(id){
       this.$router.push('/pedido/'+id+'/itens-pedido/listar')
+    },
+
+    toLocaleDate(date){
+      let localeDate = new Date(date)
+      return localeDate.toLocaleString()
     }
+  },
+  computed: {
+
   },
   mounted(){
     this.obterPedidos()

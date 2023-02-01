@@ -1,6 +1,6 @@
 <template>
   <div class="col-7 d-flex flex-column align-items-center">
-    <h2>Pedido {{ this.$route.params.pedidoId }} - {{ Pedido.vendedor.nome }} - {{ Pedido.cliente.nome }}</h2>
+    <h2>Pedido {{ itemPedidoId }} - {{ Pedido.vendedor.nome }} - {{ Pedido.cliente.nome }}</h2>
     <p v-if="ItensPedido.length === 0">Esse pedido não possui nenhum item</p>
     <table class="table table-striped" v-else>
         <thead>
@@ -16,15 +16,20 @@
           <tr v-for="(item, index) in ItensPedido" :key="index">
             <th scope="row">{{ item.id }}</th>
             <td scope="row">{{ item.servico.nome }}</td>
-            <td>{{ item.valor }}</td>
+            <td>{{ toLocaleString(item.valor) }}</td>
             <td>{{ item.quantidade }}</td>
-            <td>R$ {{ item.valor* item.quantidade }}</td>
+            <td>{{ toLocaleString(item.valor*item.quantidade) }}</td>
             <td>
               <button class="btn btn-success" @click="editarPedido(Pedido.id, item.id)">Editar</button>
               <button class="btn btn-danger" @click="excluirPedido(item)">Excluir</button>
             </td>
           </tr>
         </tbody>
+        <tfoot>
+          <tr>
+            <th>Valor Total: {{ valorTotal() }}</th>
+          </tr>
+        </tfoot>
     </table>
     <button class="btn btn-primary" @click="adicionarNovoItem(Pedido.id)">Adicionar novo item</button>
   </div>
@@ -38,18 +43,26 @@ export default {
   name: "listarItemPedidos",
   data() {
     return{
+      itemPedidoId: this.$route.params.pedidoId,
       ItensPedido: [],
-      Pedido: {}
+      Pedido: {
+        vendedor: {
+          nome: ""
+        },
+        cliente: {
+          nome: ""
+        } 
+      }
     }
   },
   methods: {
     obterItensPedido() {
-      ItemPedidoDataService.listarPorPedido(this.$route.params.pedidoId)
+      ItemPedidoDataService.listarPorPedido(this.itemPedidoId)
         .then(response => this.ItensPedido = response.data)
     },
 
     obterPedidos() {
-      PedidoDataService.obterPorId(this.$route.params.pedidoId)
+      PedidoDataService.obterPorId(this.itemPedidoId)
         .then(response => this.Pedido = response.data)
     },
 
@@ -60,15 +73,26 @@ export default {
     async excluirPedido(pedido){
       if(confirm(`Tem certeza que deseja excluir o pedido ${pedido.id}`)){
         await ItemPedidoDataService.deletar(pedido.id)
-        this.$router.push("/pedido/listar")
+        this.obterPedidos()
+        console.log(this.Pedido)
       }
     },
 
     adicionarNovoItem(id){
       this.$router.push("/pedido/"+id+"/itens-pedido/cadastrar")
+    },
+
+    valorTotal(){
+      let valorTotal = 0
+      for(let cont=0; cont < this.ItensPedido.length; cont++){
+        valorTotal+=this.ItensPedido[cont].valor
+      }
+      return valorTotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
+    },
+    toLocaleString(value){
+      let scopedValue = value
+      return scopedValue.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
     }
-  },
-  computed: {
   },
   beforeMount(){
     this.obterItensPedido()

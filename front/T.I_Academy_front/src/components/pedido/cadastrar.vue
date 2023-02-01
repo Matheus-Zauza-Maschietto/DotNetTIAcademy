@@ -4,7 +4,7 @@
     <div class="form" style="padding: 1%;">
         <div>
             <label for="" class="form-label">Data</label>
-            <input type="text" class="form-control" disabled :value="cadastro.data">
+            <input type="text" class="form-control" disabled :value="toLocaleDate(dateToView)">
         </div>
         <div>
             <label for="" class="form-label">Vendedor</label>
@@ -34,6 +34,7 @@ export default {
     name: "cadastrarFuncionarios",
     data(){
         return{
+            dateToView: new Date(),
             cadastro: {
                 data: new Date().toISOString(),
                 clienteId: "",
@@ -50,6 +51,10 @@ export default {
                     this.$router.push('/pedido/listar')
                 })
         },
+        toLocaleDate(date){
+            let localeDate = date
+            return localeDate.toLocaleString()
+        }
         
     },
     mounted(){
