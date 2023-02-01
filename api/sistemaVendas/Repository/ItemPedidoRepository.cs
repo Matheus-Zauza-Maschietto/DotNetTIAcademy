@@ -34,7 +34,9 @@ namespace sistemaVendas.Repository
 
         public ItemPedido ObterPorId(int id)
         {
-            var itemPedido = _context.ItensPedido.Find(id);
+            var itemPedido = _context.ItensPedido.Include(x => x.Servico)
+                                                 .Where(x => x.Id == id)
+                                                 .First();
             return itemPedido;
         }
 

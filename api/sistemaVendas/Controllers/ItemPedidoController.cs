@@ -66,7 +66,7 @@ namespace sistemaVendas.Controllers
                 itemPedido.MapearAtualizarPedidoDTO(dto);
                 return Ok(itemPedido);
             }
-            return NotFound(new {mensagem = $"Não foi possivel encontrar nenhum item de pedido com id {id}"});
+            return NotFound(new {mensagem = itemPedido});
         }
 
         [HttpDelete("{id}")]

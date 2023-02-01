@@ -6,12 +6,12 @@
           <div>
               <label for="" class="form-label">Serviços Atual</label>
               <br>
-              <input type="text" v-model="ServicoAtual.nome" class="form-control" disabled>
+              <input type="text" v-model="cadastro.servico.nome" class="form-control" disabled>
           </div>
           <div>
               <label for="" class="form-label">Serviços Atualizado</label>
               <br>
-              <select name="servicos" id="servicos" v-model="cadastro.servicoId" class="form-select">
+              <select name="servicos" id="servicos" v-model="cadastro.servico.id" class="form-select">
                   <option v-for="(servico, index) in Servicos" :key="index" :value="servico.id">{{ servico.nome }}</option>
               </select>
           </div>
@@ -39,49 +39,56 @@
       data(){
           return{
               cadastro: {
-                pedidoId: this.$route.params.itemPedidoId,
+              },
+              Dto:{
+                pedidoId: "",
                 servicoId: "",
                 quantidade: "",
                 valor: ""
               },
-              ServicoAtual: {},
               Servicos: [],
           }
       },
       methods: {
           AtualizarItemPedido(){
+            this.MakeDto()
               if(Number(this.cadastro.quantidade) <= 0 || Number(this.cadastro.valor) <= 0){
-                  alert("Quantidade e valor devem ter um valor minimo de 1")
+                  alert("Quantidade e Valor devem ter no minimo 1")
               }
               else{
-                  ItemPedidioDataService.atualizar(this.cadastro.pedidoId, this.cadastro)
+                  ItemPedidioDataService.atualizar(this.Dto.pedidoId, this.Dto)
                   .then(() => {
-                      this.$router.push('/pedido/'+this.$route.params.pedidoId+'/itens-pedido/listar')
+                      this.$router.push('/pedido/'+this.cadastro.pedidoId+'/itens-pedido/listar')
                   })
               }
           },
-          
+          MakeDto(){
+            this.Dto.pedidoId = this.cadastro.pedidoId
+            this.Dto.servicoId = this.cadastro.servicoId
+            this.Dto.quantidade = this.cadastro.quantidade
+            this.Dto.valor = this.cadastro.valor
+          },
+
+          getCadastro(){
+            ItemPedidioDataService.obterPorId(this.$route.params.itemPedidoId)
+            .then((response) => {
+                this.cadastro = response.data
+                console.log(this.cadastro)
+            })
+          },
+
+          getServicos(){
+            ServicoDataService.listar()
+            .then((response) => {
+                this.Servicos = response.data
+                this.Servicos = this.Servicos.filter(item => item.id !== this.cadastro.servico.id)
+            })
+          }
       },
-      mounted(){
-          ItemPedidioDataService.obterPorId(this.$route.params.itemPedidoId)
-          .then((response) => {
-            this.cadastro = response.data
-          })
-
-          ServicoDataService.listar()
-          .then((response) => {
-              this.Servicos = response.data
-              this.Servicos = this.Servicos.filter(item =>
-              {
-                if(item.id == this.cadastro.servicoId){
-                    this.ServicoAtual = item
-                    return false
-                }
-                return true
-              })
-          })
-
-      }
+      beforeMount(){
+        this.getCadastro()
+        this.getServicos()
+      },
   }
   </script>
   
