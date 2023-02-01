@@ -2,7 +2,7 @@
   <div id="cadastro-vendedor">
     <h3>Novo Item Pedido</h3>
     <div class="form" style="padding: 1%;">
-        <h2>Pedido {{ this.$route.params.pedidoId }}</h2>
+        <h4>Pedido id: {{ this.$route.params.pedidoId }}</h4>
         <div>
             <label for="" class="form-label">Serviços</label>
             <br>

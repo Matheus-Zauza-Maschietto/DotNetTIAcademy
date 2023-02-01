@@ -1,6 +1,6 @@
 <template>
   <div class="col-7 d-flex flex-column align-items-center">
-    <h2>Pedido {{ Pedido.id }} - {{ Pedido.vendedor.nome }} - {{ Pedido.cliente.nome }}</h2>
+    <h2>Pedido {{ this.$route.params.pedidoId }} - {{ Pedido.vendedor.nome }} - {{ Pedido.cliente.nome }}</h2>
     <p v-if="ItensPedido.length === 0">Esse pedido não possui nenhum item</p>
     <table class="table table-striped" v-else>
         <thead>

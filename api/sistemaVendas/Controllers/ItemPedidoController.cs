@@ -60,13 +60,14 @@ namespace sistemaVendas.Controllers
         [HttpPut("{id}")]
         public IActionResult AtualizarItemPedido(int id, AtualizarItemPedidoDTO dto)
         {
-            var itemPedido = _repository.ObterPorId(id);
-            if(itemPedido is not null)
+            var ItemPedido = _repository.ObterPorId(id);
+            if(ItemPedido is not null)
             {
-                itemPedido.MapearAtualizarPedidoDTO(dto);
-                return Ok(itemPedido);
+                ItemPedido.MapearAtualizarPedidoDTO(dto);
+                _repository.Atualizar(ItemPedido);
+                return Ok(ItemPedido);
             }
-            return NotFound(new {mensagem = itemPedido});
+            return NotFound(new {mensagem = ItemPedido});
         }
 
         [HttpDelete("{id}")]

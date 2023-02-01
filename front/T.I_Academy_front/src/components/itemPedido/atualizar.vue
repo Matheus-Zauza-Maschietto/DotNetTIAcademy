@@ -2,7 +2,7 @@
     <div id="cadastro-vendedor">
       <h3>Atualizar pedido</h3>
       <div class="form" style="padding: 1%;">
-          <h2>Pedido {{ this.pedidoId }}</h2>
+          <h3>Pedido {{ this.cadastro.id }}</h3>
           <div>
               <label for="" class="form-label">Serviços Atual</label>
               <br>
@@ -11,7 +11,7 @@
           <div>
               <label for="" class="form-label">Serviços Atualizado</label>
               <br>
-              <select name="servicos" id="servicos" v-model="cadastro.servico.id" class="form-select">
+              <select name="servicos" id="servicos" v-model="servicoAtualizadoId" class="form-select">
                   <option v-for="(servico, index) in Servicos" :key="index" :value="servico.id">{{ servico.nome }}</option>
               </select>
           </div>
@@ -46,17 +46,21 @@
                 quantidade: "",
                 valor: ""
               },
+              servicoAtualizadoId: "",
               Servicos: [],
           }
       },
       methods: {
           AtualizarItemPedido(){
             this.MakeDto()
+
+            console.log(this.Dto)
+
               if(Number(this.cadastro.quantidade) <= 0 || Number(this.cadastro.valor) <= 0){
                   alert("Quantidade e Valor devem ter no minimo 1")
               }
               else{
-                  ItemPedidioDataService.atualizar(this.Dto.pedidoId, this.Dto)
+                  ItemPedidioDataService.atualizar(this.cadastro.id, this.Dto)
                   .then(() => {
                       this.$router.push('/pedido/'+this.cadastro.pedidoId+'/itens-pedido/listar')
                   })
@@ -64,7 +68,7 @@
           },
           MakeDto(){
             this.Dto.pedidoId = this.cadastro.pedidoId
-            this.Dto.servicoId = this.cadastro.servicoId
+            this.Dto.servicoId = this.servicoAtualizadoId
             this.Dto.quantidade = this.cadastro.quantidade
             this.Dto.valor = this.cadastro.valor
           },
@@ -73,7 +77,6 @@
             ItemPedidioDataService.obterPorId(this.$route.params.itemPedidoId)
             .then((response) => {
                 this.cadastro = response.data
-                console.log(this.cadastro)
             })
           },
 
