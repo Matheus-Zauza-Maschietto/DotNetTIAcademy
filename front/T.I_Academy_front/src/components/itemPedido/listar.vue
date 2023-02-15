@@ -85,7 +85,7 @@ export default {
     valorTotal(){
       let valorTotal = 0
       for(let cont=0; cont < this.ItensPedido.length; cont++){
-        valorTotal+=this.ItensPedido[cont].valor
+        valorTotal+=this.ItensPedido[cont].valor*this.ItensPedido[cont].quantidade
       }
       return valorTotal.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL'})
     },
